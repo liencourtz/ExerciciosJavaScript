@@ -212,32 +212,86 @@ function ex9(){
     maca = prompt("Digite uma quantidade de maçãs:")
     console.log("Maçãs: " + maca)
     if (maca < 0){
-        console.log("Valor invalido inserido")
+        console.log("Valor invalido inserido");
     }else if (maca <12){
-        console.log("O valor será de R$" + maca * 1.30)
+        console.log("O valor será de R$" + maca * 1.30);
     }else{
-        console.log("O valor será de R$" + maca * 1)
+        console.log("O valor será de R$" + maca * 1);
     }
 }
 
 function ex10(){
     console.log("Exercicio 10: Ler o salário fixo e o valor das vendas efetuadas pelo vendedor de uma empresa. Sabendo-se que ele recebe uma comissão de 3% sobre o total das vendas até R$ 1.500,00 mais 5% sobre o que ultrapassar este valor, calcular e escrever o seu salário total.")
     salario = prompt("Informe o salario fixo: ")
-    console.log("Salario fixo: R$"+ salario)
+    console.log("Salario fixo: R$" + salario)
     vendas = prompt("Informe o total em vendas: ")
-    console.log=("Total em vendas: R$" + vendas)
+    console.log("Total em vendas: R$" + vendas)
 
-    if(salario <= 0 || vendas <= 0){
+    c3 = (3 * parseFloat(vendas))/100
+    c5 = (5 * (parseFloat(vendas)-1500))/100
+    result1 = parseFloat(salario) + parseFloat(c3)
+    result2 = parseFloat(salario) + parseFloat(c3) + parseFloat(c5)
+
+    if (salario <= 0 || vendas <= 0){
         console.log("Valor invalido inserido")
-    }else if(vendas >= 1500){
-        c5 = (5*(vendas-1500))/100
-        c3 = (3*vendas)/100
-        result = salario + c5 + c3
-
-        console.log("Meta atingida! O valor será de: R$" + result)
+    }else if (vendas >= 1500){
+        console.log("Meta atingida! O valor será de: R$" + result2)
     }else{
-        c3 = (3 * parseFloat(vendas))/100
-        result = parseFloat(salario) + parseFloat(c3)
-        console.log("O valor será de: R$" + result)
+        console.log("O valor será de: R$" + result1)
+    }
+}
+
+function ex11(){
+    console.log("Exercicio 11: Faça um algoritmo para ler: número da conta do cliente, saldo, débito e crédito. Após, calcular e escrever o saldo atual (saldo atual = saldo - débito + crédito). Também testar se saldo atual for maior ou igual a zero escrever a mensagem 'Saldo Positivo', senão escrever a mensagem 'Saldo Negativo’.")
+    conta = prompt("Informe o numero da sua conta: ")
+    console.log("Conta: " + conta)
+    saldo = prompt("Informe seu saldo: ")
+    console.log("Saldo: " + saldo)
+    debito = prompt("Informe seu debito: ")
+    console.log("Debito: " + debito)
+    credito = prompt("Informe seu credito: ")
+    console.log("Credito: " + credito)
+
+    result = parseFloat(saldo) - parseFloat(debito) + parseFloat(credito)
+
+    if(result < 0){
+        console.log("Saldo negativo, seu saldo é de R$" + result)
+    }else{
+        console.log("Saldo positivo, seu saldo é de R$" + result)
+    }
+}
+
+function ex12(){
+    console.log("Exercicio 12: Ler um valor inteiro (aceitar somente valores entre 1 e 10) e escrever a tabuada de 1 a 10 do valor lido.")
+    num = prompt("Digite um numero de 1 a 10: ")
+    
+    if(num <= 0 || num > 10){
+        console.log("Valor invalido inserido")
+    }else{
+        for (i = 0; i <=10; i++){
+            msg = num + " * " + i + " = " + parseFloat(num * parseFloat(i))  + "\n"
+            console.log(msg)
+        } 
+    }
+
+
+}
+
+function ex13(){
+    console.log("Exercicio 13: Ler um valor N e imprimir todos os valores inteiros entre 1 (inclusive) e N (inclusive). Considere que o N será sempre maior que ZERO.")
+    num = prompt("Informe um numero maior que ZERO: ")
+    if(num < 0){
+        console.log("Valor inserido invalido")
+    }else{
+        for (i = 0; i <= parseFloat(num-1); i++ ){
+            console.log(i+1)
+        }
+    }
+}
+
+function ex14(){
+    console.log("Exercicio 14: Ler 10 valores e escrever quantos desses valores lidos são NEGATIVOS.")
+    for(i = 0; i <= 10; i++){
+        
     }
 }
